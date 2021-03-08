@@ -79,6 +79,41 @@ else if(input.length>=3){
             }
         }
     }
+    else if(input[0]=="-n" || input[0]=="-b" || input[0]=="-s"){
+        if(input[0]=="-n"){
+            for(let i=1;i<input.length;i++){
+                if(fs.existsSync(input[i])){
+                    numbering_all(input[i]);
+                    console.log("---------------------------------------------------------")//separating line
+                }
+                else{
+                    console.log("You have entered file which doesn't exist");
+                }
+            }
+        }
+        else if(input[0]=="-s"){
+            for(let i=1;i<input.length;i++){
+                if(fs.existsSync(input[i])){
+                    singleline_break(input[i]);
+                    console.log("---------------------------------------------------------")//separating line
+                }
+                else{
+                    console.log("You have entered file which doesn't exist");
+                }
+            }
+        }
+        else if(input[0]=="-b"){
+            for(let i=1;i<input.length;i++){
+                if(fs.existsSync(input[i])){
+                    numbering_nonemp(input[i]);
+                    console.log("---------------------------------------------------------")//separating line
+                }
+                else{
+                    console.log("You have entered file which doesn't exist");
+                }
+            }
+        }
+    }
     else{
         for(let i=0;i<input.length;i++){
             if(fs.existsSync(input[i])){
